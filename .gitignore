@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/hiveBee/node_modules
+/hiveBee/.pnp
+/hiveBee/.pnp.js
+
+# testing
+/hiveBee/coverage
+
+# production
+/hiveBee/build
+
+# misc
+/hiveBee/.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/hiveBee/npm-debug.log*
+/hiveBee/yarn-debug.log*
+/hiveBee/yarn-error.log*
