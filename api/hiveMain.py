@@ -117,11 +117,27 @@ def lambda_handler(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE):
                 res['KeywordLen'] = len(str(res['keyword_queries']))
 
             #returning the final result
-            return json_file
+            return {
+                "statusCode": 200,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Headers": "*"
+                },
+                'body': json_file
+            }
 
         #if query id is invalid, returning no results
         elif chosen_query_id not in all_logs['ErrorsInHiveLogs'].keys():
-            return {''}
+            return {
+                "statusCode": 200,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Headers": "*"
+                },
+                'body': ''
+            }
 
 
         #if query id is given and valid, getting all query logs and application logs associated with it
@@ -201,5 +217,13 @@ def lambda_handler(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE):
                 res['KeywordLen'] = len(str(res['keyword_queries']))
             
             #returning final result
-            return json_file
+            return {
+                "statusCode": 200,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Headers": "*"
+                },
+                'body': json_file
+            }
     
