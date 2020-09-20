@@ -20,7 +20,7 @@ def HiveMainProgram():
     KEYWORD = PARAMETERS["keyword"].lower()#comma separated inputs for keyword search in the entire logs
     EXCLUSIVE = PARAMETERS["exclusive"] #set to true when keyword search is done from second page else false.
     LOCATION = PARAMETERS["log_location"]
-    res=HiveScript.MainProg(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE)
+    res=hiveScript.MainProg(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE)
     return res
 
 if __name__ == '__main__':

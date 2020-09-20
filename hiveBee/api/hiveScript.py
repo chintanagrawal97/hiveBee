@@ -1,7 +1,7 @@
 import gzip , re , time , os 
 import click
 import hiveMain
-
+from flask import jsonify 
 SPECIFIC_ERROR_L=[]
 SPECIFIC_WARN_L=[]
 JSON_ARRAY = []
@@ -22,8 +22,9 @@ JSON_KEY = []
 #     return res
 
 def MainProg(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE):
-    res = HiveMain.lambda_handler(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE)
-    return jsonify(res)
+    res = hiveMain.lambda_handler(CLUSTER_ID,QUERY_ID,KEYWORD,LOCATION,EXCLUSIVE)
+    jsonResp = {'jack': 4098, 'sape': 4139}
+    return res
 
 if __name__=="__main__": 
     MainProg()     

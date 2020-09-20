@@ -21,3 +21,9 @@
 /hiveBee/npm-debug.log*
 /hiveBee/yarn-debug.log*
 /hiveBee/yarn-error.log*
+
+#python binaries 
+hiveBee/api/venv/
+
+#python compliledFiles  
+hiveBee/api/__pycache__
